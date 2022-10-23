@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
+using System.Collections;
 #endif
 
 namespace StarterAssets
@@ -12,6 +13,7 @@ namespace StarterAssets
 	public class FirstPersonController : MonoBehaviour
 	{
 		[Header("Player")]
+		private CharacterController characterController;
 		[Tooltip("Move speed of the character in m/s")]
 		public float MoveSpeed = 4.0f;
 		[Tooltip("Sprint speed of the character in m/s")]
@@ -50,6 +52,18 @@ namespace StarterAssets
 		public float TopClamp = 90.0f;
 		[Tooltip("How far in degrees can you move the camera down")]
 		public float BottomClamp = -90.0f;
+
+		[Header("Crouch Parameters")]
+		[SerializeField] private float crouchHeight = 0.5f;
+		[SerializeField] private float standingHeight = 2f;
+		[SerializeField] private float timeToCrouch = 0.25f;
+		[SerializeField] private Vector3 crouchingCenter = new Vector3(0, 0.5f, 0);
+		[SerializeField] private Vector3 standingCenter = new Vector3(0, 0, 0);
+		private bool isCrouching;
+		private bool duringCrouchAnimation;
+		[SerializeField] private KeyCode crouchKey = KeyCode.LeftControl;
+		[SerializeField] private bool canCrouch = true;
+		private bool ShouldCrouch => Input.GetKeyDown(crouchKey) && !duringCrouchAnimation;
 
 		// cinemachine
 		private float _cinemachineTargetPitch;
@@ -115,6 +129,9 @@ namespace StarterAssets
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
+			if(canCrouch) {
+				handleCrouch();
+			}
 		}
 
 		private void LateUpdate()
@@ -263,6 +280,34 @@ namespace StarterAssets
 
 			// when selected, draw a gizmo in the position of, and matching radius of, the grounded collider
 			Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
+		}
+
+		private void handleCrouch()
+		{
+			if(ShouldCrouch) {
+				StartCoroutine(CrouchStand());
+			}
+		}
+
+		private IEnumerator CrouchStand() {
+			duringCrouchAnimation = true;
+			float timeElapsed = 0;
+			float targetHeight = isCrouching ? standingHeight : crouchHeight;
+			float currentHigh = characterController.height;
+			Vector3 targetCenter = isCrouching ? standingCenter : crouchingCenter;
+			Vector3 currentCenter = characterController.center;
+
+			while(timeElapsed < timeToCrouch) {
+				characterController.height = Mathf.Lerp(currentHigh, targetHeight, timeElapsed/timeToCrouch);
+				characterController.center = Vector3.Lerp(currentCenter, targetCenter, timeElapsed/timeToCrouch);
+				timeElapsed += Time.deltaTime;
+				yield return null;
+			}
+			characterController.height = targetHeight;
+			characterController.center = targetCenter;
+			isCrouching = !isCrouching;
+
+			duringCrouchAnimation = false;
 		}
 	}
 }
