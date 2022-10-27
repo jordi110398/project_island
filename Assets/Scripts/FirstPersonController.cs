@@ -293,21 +293,22 @@ namespace StarterAssets
 			duringCrouchAnimation = true;
 			float timeElapsed = 0;
 			float targetHeight = isCrouching ? standingHeight : crouchHeight;
-			float currentHigh = characterController.height;
+			float currentHigh = _controller.height;
 			Vector3 targetCenter = isCrouching ? standingCenter : crouchingCenter;
-			Vector3 currentCenter = characterController.center;
+			Vector3 currentCenter = _controller.center;
 
 			while(timeElapsed < timeToCrouch) {
-				characterController.height = Mathf.Lerp(currentHigh, targetHeight, timeElapsed/timeToCrouch);
-				characterController.center = Vector3.Lerp(currentCenter, targetCenter, timeElapsed/timeToCrouch);
+				_controller.height = Mathf.Lerp(currentHigh, targetHeight, timeElapsed/timeToCrouch);
+				_controller.center = Vector3.Lerp(currentCenter, targetCenter, timeElapsed/timeToCrouch);
 				timeElapsed += Time.deltaTime;
 				yield return null;
 			}
-			characterController.height = targetHeight;
-			characterController.center = targetCenter;
+			_controller.height = targetHeight;
+			_controller.center = targetCenter;
 			isCrouching = !isCrouching;
 
 			duringCrouchAnimation = false;
 		}
+		
 	}
 }
