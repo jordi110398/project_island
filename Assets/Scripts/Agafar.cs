@@ -41,13 +41,13 @@ public class Agafar : MonoBehaviour
         if (Vector3.Distance(heldObj.transform.position, holdArea.position) > 0.1f)
         {
             Vector3 moveDirection = (holdArea.position - heldObj.transform.position);
-            heldObjRB.AddForce(moveDirection * pickupForce);
+            heldObjRB.AddForce(moveDirection * pickupForce); 
         }
     }
 
     void PickupObject(GameObject pickObj)
     {
-        if (pickObj.GetComponent<Rigidbody>())
+        if (pickObj.GetComponent<Rigidbody>() & pickObj.CompareTag("Pes_petit"))
         {
             heldObjRB = pickObj.GetComponent<Rigidbody>();
             heldObjRB.useGravity = false;
@@ -58,6 +58,15 @@ public class Agafar : MonoBehaviour
             heldObj = pickObj;
 
         }
+        else if (pickObj.GetComponent<Rigidbody>() & pickObj.CompareTag("Pes_gran"))
+        {
+            heldObjRB = pickObj.GetComponent<Rigidbody>();
+            heldObjRB.drag = 10;
+            heldObjRB.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionY;
+
+            heldObj = pickObj;
+            
+        }
     }
 
     void DropObject()
@@ -65,6 +74,7 @@ public class Agafar : MonoBehaviour
         heldObjRB.useGravity = true;
         heldObjRB.drag = 1;
         heldObjRB.constraints = RigidbodyConstraints.None;
+        if (heldObjRB.CompareTag("Pes_gran")) heldObjRB.constraints = RigidbodyConstraints.FreezeRotation;
 
         heldObj.transform.parent = null;
         heldObj = null;
