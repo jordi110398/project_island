@@ -720,6 +720,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63bc85d1caef7ff4ba50f02a0921e388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactuable: 1
+  pesPetit: 0
+  pesGran: 0
 --- !u!54 &924924600
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -893,9 +896,9 @@ GameObject:
   - component: {fileID: 1062768363}
   - component: {fileID: 1062768362}
   - component: {fileID: 1062768367}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
-  m_TagString: Pes_petit
+  m_TagString: InteractiveObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1006,6 +1009,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63bc85d1caef7ff4ba50f02a0921e388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactuable: 0
+  pesPetit: 1
+  pesGran: 0
 --- !u!1 &1286581849
 GameObject:
   m_ObjectHideFlags: 0
@@ -1020,9 +1026,9 @@ GameObject:
   - component: {fileID: 1286581851}
   - component: {fileID: 1286581850}
   - component: {fileID: 1286581855}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube big
-  m_TagString: Pes_gran
+  m_TagString: InteractiveObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1133,6 +1139,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63bc85d1caef7ff4ba50f02a0921e388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactuable: 0
+  pesPetit: 0
+  pesGran: 1
 --- !u!1 &1527889984 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9005220659476430823, guid: 2d3a85ecde41a8246a79669975912b74,

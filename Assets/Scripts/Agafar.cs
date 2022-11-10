@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Agafar : MonoBehaviour
-{
+{ 
+
     [Header("Pickup Settings")]
     [SerializeField] Transform holdArea;
     private GameObject heldObj;
@@ -12,6 +13,7 @@ public class Agafar : MonoBehaviour
     [Header("Physics Parameters")]
     [SerializeField] private float pickupRange = 5.05f;
     [SerializeField] private float pickupForce = 150.0f;
+    
 
     private void Update()
     {
@@ -47,7 +49,7 @@ public class Agafar : MonoBehaviour
 
     void PickupObject(GameObject pickObj)
     {
-        if (pickObj.GetComponent<Rigidbody>() & pickObj.CompareTag("Pes_petit"))
+        if (pickObj.GetComponent<Rigidbody>() & pickObj.GetComponent<InteractiveObject>().esPetit())
         {
             heldObjRB = pickObj.GetComponent<Rigidbody>();
             heldObjRB.useGravity = false;
@@ -58,7 +60,7 @@ public class Agafar : MonoBehaviour
             heldObj = pickObj;
 
         }
-        else if (pickObj.GetComponent<Rigidbody>() & pickObj.CompareTag("Pes_gran"))
+        else if (pickObj.GetComponent<Rigidbody>() & pickObj.GetComponent<InteractiveObject>().esGran())
         {
             heldObjRB = pickObj.GetComponent<Rigidbody>();
             heldObjRB.drag = 10;
@@ -74,7 +76,7 @@ public class Agafar : MonoBehaviour
         heldObjRB.useGravity = true;
         heldObjRB.drag = 1;
         heldObjRB.constraints = RigidbodyConstraints.None;
-        if (heldObjRB.CompareTag("Pes_gran")) heldObjRB.constraints = RigidbodyConstraints.FreezeRotation;
+        if (heldObjRB.GetComponent<InteractiveObject>().esGran()) heldObjRB.constraints = RigidbodyConstraints.FreezeRotation;
 
         heldObj.transform.parent = null;
         heldObj = null;

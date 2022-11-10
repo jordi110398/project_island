@@ -28,8 +28,8 @@ public class Selected : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, distancia, mask))
         { // el raycast ha impactat amb un objecte que ha complert les condicions
             Deselect();
-            SelectedObject(hit.transform);
-            if (hit.collider.tag == "InteractiveObject")
+            SelectedObject(hit);
+            if (hit.collider.tag == "InteractiveObject" & hit.collider.GetComponent<InteractiveObject>().esInteractuable())
             { // podem interactuar amb aquest objecte
                 if (Input.GetKeyDown(KeyCode.E))
                 { // s'ha premut la tecla per interactuar
@@ -46,10 +46,12 @@ public class Selected : MonoBehaviour
     }
 
     // S'encarrega de canviar el color del material amb el que ha impactat el RayCast
-    void SelectedObject(Transform transform)
+    void SelectedObject(RaycastHit hit)
     {
-        transform.GetComponent<MeshRenderer>().material.color = Color.green;
-        ultimReconegut = transform.gameObject;
+        if (hit.collider.GetComponent<InteractiveObject>().esInteractuable()) {
+            hit.transform.GetComponent<MeshRenderer>().material.color = Color.green;
+            ultimReconegut = hit.transform.gameObject;
+        }
     }
 
     // S'encarrega de deseleccionar l'objecte
