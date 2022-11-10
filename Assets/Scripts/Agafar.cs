@@ -10,8 +10,8 @@ public class Agafar : MonoBehaviour
     private Rigidbody heldObjRB;
 
     [Header("Physics Parameters")]
-    [SerializeField] private float pickupRange = 5.05f;
-    [SerializeField] private float pickupForce = 150.0f;
+    [SerializeField] private float pickupRange = 0;
+    [SerializeField] private float pickupForce = 1.0f;
 
     private void Update()
     {
