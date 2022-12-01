@@ -129,9 +129,6 @@ namespace StarterAssets
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
-			if(canCrouch) {
-				handleCrouch();
-			}
 		}
 
 		private void LateUpdate()
