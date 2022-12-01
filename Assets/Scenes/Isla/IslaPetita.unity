@@ -1219,6 +1219,36 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &778254465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778254455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e6c249419abd5e4f9596070051b96bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  holdArea: {fileID: 0}
+  pickupRange: 0
+  pickupForce: 1
+--- !u!114 &778254466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778254455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63bc85d1caef7ff4ba50f02a0921e388, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactuable: 0
+  pesPetit: 1
+  pesGran: 0
 --- !u!1 &833920240 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7008384287521584254, guid: 4745d1d7800129342a1b23f92c31715a,
@@ -1959,7 +1989,7 @@ PrefabInstance:
     - target: {fileID: 5157990451176188414, guid: acd9890ef673bb34baab0e2c2f20659a,
         type: 3}
       propertyPath: m_TagString
-      value: Pes_gran
+      value: Pes_petit
       objectReference: {fileID: 0}
     - target: {fileID: 8200919837650738157, guid: acd9890ef673bb34baab0e2c2f20659a,
         type: 3}
@@ -1969,17 +1999,17 @@ PrefabInstance:
     - target: {fileID: 8200919837650738157, guid: acd9890ef673bb34baab0e2c2f20659a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 227.06377
+      value: 254.643
       objectReference: {fileID: 0}
     - target: {fileID: 8200919837650738157, guid: acd9890ef673bb34baab0e2c2f20659a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.456231
+      value: 9.5
       objectReference: {fileID: 0}
     - target: {fileID: 8200919837650738157, guid: acd9890ef673bb34baab0e2c2f20659a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 778.864
+      value: 810.86
       objectReference: {fileID: 0}
     - target: {fileID: 8200919837650738157, guid: acd9890ef673bb34baab0e2c2f20659a,
         type: 3}
