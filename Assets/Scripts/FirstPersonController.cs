@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 using System.Collections;
@@ -279,33 +279,4 @@ namespace StarterAssets
 			Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
 		}
 
-		private void handleCrouch()
-		{
-			if(ShouldCrouch) {
-				StartCoroutine(CrouchStand());
-			}
-		}
-
-		private IEnumerator CrouchStand() {
-			duringCrouchAnimation = true;
-			float timeElapsed = 0;
-			float targetHeight = isCrouching ? standingHeight : crouchHeight;
-			float currentHigh = _controller.height;
-			Vector3 targetCenter = isCrouching ? standingCenter : crouchingCenter;
-			Vector3 currentCenter = _controller.center;
-
-			while(timeElapsed < timeToCrouch) {
-				_controller.height = Mathf.Lerp(currentHigh, targetHeight, timeElapsed/timeToCrouch);
-				_controller.center = Vector3.Lerp(currentCenter, targetCenter, timeElapsed/timeToCrouch);
-				timeElapsed += Time.deltaTime;
-				yield return null;
-			}
-			_controller.height = targetHeight;
-			_controller.center = targetCenter;
-			isCrouching = !isCrouching;
-
-			duringCrouchAnimation = false;
-		}
-		
-	}
 }
