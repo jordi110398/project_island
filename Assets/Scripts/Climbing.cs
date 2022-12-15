@@ -1,25 +1,25 @@
 using StarterAssets;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Climbing : MonoBehaviour
 {
-
-    [Header("Referencies")]
+    [Header("References")]
     public Transform orientation;
     public Rigidbody rb;
     public FirstPersonController fpc;
     public LayerMask whatIsWall;
 
-    [Header("Escalar")]
+    [Header("Climbing")]
     public float climbSpeed;
     public float maxClimbTime;
     private float climbTimer;
 
     private bool climbing;
 
-    [Header("Detecció")]
+    [Header("Detection")]
     public float detectionLength;
     public float sphereCastRadius;
     public float maxWallLookAngle;
@@ -28,14 +28,7 @@ public class Climbing : MonoBehaviour
     private RaycastHit frontWallHit;
     private bool wallFront;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         WallCheck();
         StateMachine();
@@ -44,17 +37,21 @@ public class Climbing : MonoBehaviour
 
     private void StateMachine()
     {
-        // Estat 1 - Escalant
+        // State 1 - Climbing
         if (wallFront && Input.GetKey(KeyCode.W) && wallLookAngle < maxWallLookAngle)
         {
+            
             if (!climbing && climbTimer > 0) StartClimbing();
+
             // timer
             if (climbTimer > 0) climbTimer -= Time.deltaTime;
             if (climbTimer < 0) StopClimbing();
         }
-        // Estat 3 - Res
+
+        // State 3 - None
         else
         {
+            
             if (climbing) StopClimbing();
         }
     }
@@ -62,7 +59,10 @@ public class Climbing : MonoBehaviour
     private void WallCheck()
     {
         wallFront = Physics.SphereCast(transform.position, sphereCastRadius, orientation.forward, out frontWallHit, detectionLength, whatIsWall);
+        // If, for example, your maxClimbLookAngle is 30 you need to lock at the wall in this area in order to start climbing
+        // If you look at the wall in angle of something like 45 degrees its not going to work
         wallLookAngle = Vector3.Angle(orientation.forward, -frontWallHit.normal);
+        print("Works");
         if (fpc.Grounded)
         {
             climbTimer = maxClimbTime;
