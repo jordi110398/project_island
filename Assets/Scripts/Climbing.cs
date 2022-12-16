@@ -8,7 +8,7 @@ public class Climbing : MonoBehaviour
 {
     [Header("References")]
     public Transform orientation;
-    public Rigidbody rb;
+    public CharacterController cc;
     public FirstPersonController fpc;
     public LayerMask whatIsWall;
 
@@ -76,7 +76,7 @@ public class Climbing : MonoBehaviour
 
     private void ClimbingMovement()
     {
-        rb.velocity = new Vector3(rb.velocity.x, climbSpeed, rb.velocity.z);
+        cc.velocity = Vector3(0, climbSpeed, 0);
     }
 
     private void StopClimbing()
