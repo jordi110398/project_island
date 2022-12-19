@@ -76,7 +76,7 @@ public class Climbing : MonoBehaviour
 
     private void ClimbingMovement()
     {
-        cc.velocity = Vector3(0, climbSpeed, 0);
+        //cc.velocity = Vector3(0, climbSpeed, 0);
     }
 
     private void StopClimbing()
