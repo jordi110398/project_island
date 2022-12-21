@@ -22,8 +22,6 @@ public class Climbing : MonoBehaviour
     [Header("Detection")]
     public float detectionLength;
     public float sphereCastRadius;
-    public float maxWallLookAngle;
-    private float wallLookAngle;
 
     private RaycastHit frontWallHit;
     private bool wallFront;
@@ -38,7 +36,7 @@ public class Climbing : MonoBehaviour
     private void StateMachine()
     {
         // State 1 - Climbing
-        if (wallFront && Input.GetKey(KeyCode.W) && wallLookAngle < maxWallLookAngle)
+        if (wallFront && Input.GetKey(KeyCode.W))
         {
             
             if (!climbing && climbTimer > 0) StartClimbing();
@@ -51,7 +49,6 @@ public class Climbing : MonoBehaviour
         // State 3 - None
         else
         {
-            
             if (climbing) StopClimbing();
         }
     }
@@ -59,10 +56,6 @@ public class Climbing : MonoBehaviour
     private void WallCheck()
     {
         wallFront = Physics.SphereCast(transform.position, sphereCastRadius, orientation.forward, out frontWallHit, detectionLength, whatIsWall);
-        // If, for example, your maxClimbLookAngle is 30 you need to lock at the wall in this area in order to start climbing
-        // If you look at the wall in angle of something like 45 degrees its not going to work
-        wallLookAngle = Vector3.Angle(orientation.forward, -frontWallHit.normal);
-        print("Works");
         if (fpc.Grounded)
         {
             climbTimer = maxClimbTime;
@@ -76,7 +69,7 @@ public class Climbing : MonoBehaviour
 
     private void ClimbingMovement()
     {
-        //cc.velocity = Vector3(0, climbSpeed, 0);
+        cc.Move(Vector3.up); // ARREGLAR
     }
 
     private void StopClimbing()
