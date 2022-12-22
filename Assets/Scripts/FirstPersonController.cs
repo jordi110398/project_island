@@ -3,6 +3,7 @@ using System;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 using System.Collections;
+using UnityEngine.AI;
 #endif
 
 namespace StarterAssets
@@ -65,6 +66,8 @@ namespace StarterAssets
 		[SerializeField] private KeyCode crouchKey = KeyCode.LeftControl;
 		[SerializeField] private bool canCrouch = true;
 		private bool ShouldCrouch => Input.GetKeyDown(crouchKey) && !duringCrouchAnimation;
+
+		
 
 		// cinemachine
 		private float _cinemachineTargetPitch;

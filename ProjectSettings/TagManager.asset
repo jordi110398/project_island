@@ -8,6 +8,7 @@ TagManager:
   - Pes_petit
   - Pes_gran
   - InteractiveObject
+  - enemic
   layers:
   - Default
   - TransparentFX
