@@ -1491,12 +1491,6 @@ CharacterController:
     type: 3}
   m_PrefabInstance: {fileID: 1728594358}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &925500711 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
-    type: 3}
-  m_PrefabInstance: {fileID: 1728594358}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &925500712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1512,7 +1506,7 @@ MonoBehaviour:
   key: 306
   movement: {fileID: 925500709}
   movementSpeed: 2
-  headToLower: {fileID: 925500711}
+  headToLower: {fileID: 156021356}
   crouchYHeadPosition: 1
   colliderToLower: {fileID: 925500706}
 --- !u!1001 &938567597
