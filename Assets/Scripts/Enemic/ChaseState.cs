@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class ChaseState : StateMachineBehaviour
 {
@@ -25,10 +26,13 @@ public class ChaseState : StateMachineBehaviour
         if (distance > chaseRange) {
             animator.SetBool("isChasing", false);
         }
-        if (distance < 2.5f) {
+        if (distance < 4f) {
             animator.SetBool("isAttacking", true);
         }
-        
+        if (distance < 2f) {
+            SceneManager.LoadScene (sceneName:"Menu");
+        }
+
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
@@ -36,16 +40,5 @@ public class ChaseState : StateMachineBehaviour
     {
         agent.SetDestination(animator.transform.position);
     }
-
-    // OnStateMove is called right after Animator.OnAnimatorMove()
-    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that processes and affects root motion
-    //}
-
-    // OnStateIK is called right after Animator.OnAnimatorIK()
-    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that sets up animation IK (inverse kinematics)
-    //}
 }
+    
