@@ -8,9 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu/Menu.unity
     guid: df4dd9d69b452794fbdaf4ce897e09b1
-  - enabled: 0
-    path: Assets/Scenes/Isla/Isla.unity
-    guid: b8ece819163bcfc48bd0a9847fbe4ad7
+
+=======
+>>>>>>> d926cd0c4140be6732858f82c7fe9d7aa326b120
   - enabled: 1
     path: Assets/Scenes/Isla/IslaPetita.unity
     guid: 881861cf8f0d9d444bbc74b592ba8d75
