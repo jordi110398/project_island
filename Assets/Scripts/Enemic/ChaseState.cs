@@ -30,7 +30,7 @@ public class ChaseState : StateMachineBehaviour
             animator.SetBool("isAttacking", true);
         }
         if (distance < 2f) {
-            SceneManager.LoadScene (sceneName:"Menu");
+            SceneManager.LoadScene(0);
         }
 
     }
