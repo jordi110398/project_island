@@ -9,6 +9,8 @@ TagManager:
   - Pes_gran
   - InteractiveObject
   - enemic
+  - Placa_pressio
+  - Porta_principal
   layers:
   - Default
   - TransparentFX

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028346, g: 0.22571373, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -223,7 +223,7 @@ PrefabInstance:
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 268.64
+      value: 261.18
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81,
         type: 3}
@@ -233,7 +233,7 @@ PrefabInstance:
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 817.14
+      value: 809.217
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81,
         type: 3}
@@ -891,6 +891,7 @@ GameObject:
   - component: {fileID: 458397939}
   - component: {fileID: 458397938}
   - component: {fileID: 458397937}
+  - component: {fileID: 458397941}
   m_Layer: 0
   m_Name: Comporta3
   m_TagString: Untagged
@@ -976,6 +977,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &458397941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458397936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6083fba642c3fde43b93d27a2ddc2cf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placa1: {fileID: 1771464428}
+  placa2: {fileID: 2118460933}
+  placa3: {fileID: 2064709458}
+  placa4: {fileID: 852689073}
+  porta: {fileID: 458397936}
 --- !u!1 &502823615
 GameObject:
   m_ObjectHideFlags: 0
@@ -1738,6 +1756,66 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 2.815, y: 0, z: 1.017}
+--- !u!1 &632136486
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 632136489}
+  - component: {fileID: 632136488}
+  - component: {fileID: 632136487}
+  m_Layer: 0
+  m_Name: Scene Variables
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &632136487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632136486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 995777834, guid: c8d0ad23af520fe46aabe2b1fecf6462, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &632136488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632136486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1465209106, guid: c8d0ad23af520fe46aabe2b1fecf6462, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"declarations":{"Kind":"Scene","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
+    _objectReferences: []
+--- !u!4 &632136489
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632136486}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 40
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &642219789
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1753,7 +1831,7 @@ PrefabInstance:
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 268.64
+      value: 261.18
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
@@ -1763,7 +1841,7 @@ PrefabInstance:
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 817.14
+      value: 809.217
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
@@ -2176,28 +2254,14 @@ GameObject:
   - component: {fileID: 852689077}
   - component: {fileID: 852689076}
   - component: {fileID: 852689075}
-  - component: {fileID: 852689074}
+  - component: {fileID: 852689079}
   m_Layer: 0
   m_Name: Placa_Pressio (4)
-  m_TagString: Untagged
+  m_TagString: Placa_pressio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &852689074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 852689073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f94cc860467a91d47b6e9c5726f60978, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  comporta: {fileID: 1036029574}
-  placa: {fileID: 852689073}
 --- !u!65 &852689075
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2276,6 +2340,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0.3, y: -0.045, z: 1.016}
+--- !u!114 &852689079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852689073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aafdd1831b8bd0f49a89dc39c5c362a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placa: {fileID: 852689073}
+  activada: 0
 --- !u!1 &855517933 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7007653479277445092, guid: 4745d1d7800129342a1b23f92c31715a,
@@ -4568,7 +4646,7 @@ PrefabInstance:
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 268.64
+      value: 261.18
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
@@ -4578,7 +4656,7 @@ PrefabInstance:
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 817.14
+      value: 809.217
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
@@ -4760,28 +4838,14 @@ GameObject:
   - component: {fileID: 1771464432}
   - component: {fileID: 1771464431}
   - component: {fileID: 1771464430}
-  - component: {fileID: 1771464429}
+  - component: {fileID: 1771464434}
   m_Layer: 0
   m_Name: Placa_Pressio (1)
-  m_TagString: Untagged
+  m_TagString: Placa_pressio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1771464429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1771464428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f94cc860467a91d47b6e9c5726f60978, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  comporta: {fileID: 1036029574}
-  placa: {fileID: 1771464428}
 --- !u!65 &1771464430
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4860,6 +4924,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 2.815, y: 0, z: 1.017}
+--- !u!114 &1771464434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771464428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aafdd1831b8bd0f49a89dc39c5c362a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placa: {fileID: 1771464428}
+  activada: 0
 --- !u!1 &1782176649
 GameObject:
   m_ObjectHideFlags: 0
@@ -5629,28 +5707,14 @@ GameObject:
   - component: {fileID: 2064709462}
   - component: {fileID: 2064709461}
   - component: {fileID: 2064709460}
-  - component: {fileID: 2064709459}
+  - component: {fileID: 2064709464}
   m_Layer: 0
   m_Name: Placa_Pressio (3)
-  m_TagString: Untagged
+  m_TagString: Placa_pressio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2064709459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2064709458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f94cc860467a91d47b6e9c5726f60978, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  comporta: {fileID: 1036029574}
-  placa: {fileID: 2064709458}
 --- !u!65 &2064709460
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5722,13 +5786,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064709458}
   m_LocalRotation: {x: 0.0026165023, y: -0.00041256406, z: 0.008863092, w: 0.9999572}
-  m_LocalPosition: {x: 258, y: 8.92, z: 819.39}
+  m_LocalPosition: {x: 258, y: 8.973, z: 819.39}
   m_LocalScale: {x: 1, y: 0.16559, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0.3, y: -0.045, z: 1.016}
+--- !u!114 &2064709464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064709458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aafdd1831b8bd0f49a89dc39c5c362a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placa: {fileID: 2064709458}
+  activada: 0
 --- !u!1 &2069562354 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5157990451176188414, guid: acd9890ef673bb34baab0e2c2f20659a,
@@ -5862,28 +5940,14 @@ GameObject:
   - component: {fileID: 2118460937}
   - component: {fileID: 2118460936}
   - component: {fileID: 2118460935}
-  - component: {fileID: 2118460934}
+  - component: {fileID: 2118460939}
   m_Layer: 0
   m_Name: Placa_Pressio (2)
-  m_TagString: Untagged
+  m_TagString: Placa_pressio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2118460934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2118460933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f94cc860467a91d47b6e9c5726f60978, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  comporta: {fileID: 1036029574}
-  placa: {fileID: 2118460933}
 --- !u!65 &2118460935
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5962,6 +6026,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0.3, y: -0.045, z: 1.016}
+--- !u!114 &2118460939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118460933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aafdd1831b8bd0f49a89dc39c5c362a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placa: {fileID: 2118460933}
+  activada: 0
 --- !u!1 &2125069497 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7008384287521584254, guid: 4745d1d7800129342a1b23f92c31715a,
